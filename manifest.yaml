@@ -1,0 +1,48 @@
+version: 0.0.1
+type: plugin
+author: ykr
+name: txt2sql
+label:
+  en_US: txt2sql
+  ja_JP: txt2sql
+  zh_Hans: txt2sql
+  pt_BR: txt2sql
+description:
+  en_US: 自然语言生成sql，允许传入知识库案例
+  ja_JP: 自然语言生成sql，允许传入知识库案例
+  zh_Hans: 自然语言生成sql，允许传入知识库案例
+  pt_BR: 自然语言生成sql，允许传入知识库案例
+icon: icon.svg
+resource:
+  memory: 268435456
+  permission:
+    tool:
+      enabled: true
+    model:
+      enabled: true
+      llm: true
+      text_embedding: false
+      rerank: false
+      tts: false
+      speech2text: false
+      moderation: false
+    app:
+      enabled: true
+    storage:
+      enabled: true
+      size: 209715200
+plugins:
+  tools:
+    - provider/txt2sql.yaml
+meta:
+  version: 0.0.1
+  arch:
+    - amd64
+    - arm64
+  runner:
+    language: python
+    version: "3.12"
+    entrypoint: main
+created_at: 2025-04-15T10:24:36.7494287+08:00
+privacy: PRIVACY.md
+verified: false

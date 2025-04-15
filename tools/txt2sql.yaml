@@ -1,0 +1,30 @@
+identity:
+  name: txt2sql
+  author: ykr
+  label:
+    en_US: txt2sql
+    zh_Hans: txt2sql
+    pt_BR: txt2sql
+description:
+  human:
+    en_US: 自然语言生成sql，允许传入知识库案例
+    zh_Hans: 自然语言生成sql，允许传入知识库案例
+    pt_BR: 自然语言生成sql，允许传入知识库案例
+  llm: 自然语言生成sql，允许传入知识库案例
+parameters:
+  - name: query
+    type: string
+    required: true
+    label:
+      en_US: Query string
+      zh_Hans: 查询语句
+      pt_BR: Query string
+    human_description:
+      en_US: 自然语言生成sql，允许传入知识库案例
+      zh_Hans: 自然语言生成sql，允许传入知识库案例
+      pt_BR: 自然语言生成sql，允许传入知识库案例
+    llm_description: 自然语言生成sql，允许传入知识库案例
+    form: llm
+extra:
+  python:
+    source: tools/txt2sql.py
