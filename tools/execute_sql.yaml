@@ -1,6 +1,6 @@
 identity:
   name: execute_sql
-  author: ykr
+  author: BarrelStopHere
   label:
     en_US: execute_sql
     zh_Hans: execute_sql
