@@ -168,7 +168,7 @@ def execute_sql(
         如果执行的是查询语句，则返回一个列表，列表中每个元素为一行字典；
         如果执行的是非查询语句，则返回一个包含受影响行数的字典，例如 {"rowcount": 3}
     """
-    driver = {
+        driver = {
         'mysql': 'pymysql',
         'oracle': 'cx_oracle',
         'sqlserver': 'pymssql',

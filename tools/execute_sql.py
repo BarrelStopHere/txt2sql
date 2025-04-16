@@ -9,7 +9,7 @@ from decimal import Decimal
 import csv
 from io import StringIO
 
-class Execute_sql(Tool):
+class ExecuteSql(Tool):
     def _invoke(self, tool_parameters: dict[str, Any]) -> Generator[ToolInvokeMessage]:
         # 获取传入的 SQL 语句
         sql = tool_parameters.get("sql")

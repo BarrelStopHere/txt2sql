@@ -59,14 +59,14 @@ class Txt2sql(Tool):
             stream=False
         )
         print(response)
-        excute_sql = response.message.content
-        if (isinstance(excute_sql, str)):
+        execute_sql = response.message.content
+        if (isinstance(execute_sql, str)):
             if (tool_parameters['result_format'] == 'json'):
                 yield self.create_json_message({
-                    "excute_sql": excute_sql
+                    "execute_sql": execute_sql
                 })
             else:
-                yield self.create_text_message(excute_sql)
+                yield self.create_text_message(execute_sql)
         else:
             yield self.create_text_message("生成失败，请检查输入参数是否正确")
 

@@ -86,9 +86,7 @@ parameters:
   - name: port
     type: number
     required: true
-    form: form
-    min: 1
-    max: 65535
+    form: llm
     label:
       en_US: Database port
       zh_Hans: 数据库端口
