@@ -12,6 +12,7 @@ identity:
   icon: icon.svg
 tools:
   - tools/txt2sql.yaml
+  - tools/execute_sql.yaml
 extra:
   python:
     source: provider/txt2sql.py
