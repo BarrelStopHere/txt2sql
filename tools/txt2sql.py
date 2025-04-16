@@ -11,9 +11,10 @@ from dify_plugin.entities.model.message import SystemPromptMessage, UserPromptMe
 from utils.prompt_loader import PromptLoader
 from utils.alchemy_db_client import format_schema_dsl
 
-class RookieText2dataTool(Tool):
+
+class Txt2sql(Tool):
     def _invoke(self, tool_parameters: dict[str, Any]) -> Generator[ToolInvokeMessage]:
-        model_info= tool_parameters.get('model')
+        model_info = tool_parameters.get('model')
         meta_data = get_db_schema(
             db_type=tool_parameters['db_type'],
             host=tool_parameters['host'],
@@ -37,7 +38,7 @@ class RookieText2dataTool(Tool):
         system_prompt = prompt_loader.get_prompt(
             db_type=tool_parameters['db_type'],
             context=context,
-            limit=tool_parameters.get( 'limit', 100 ),
+            limit=tool_parameters.get('limit', 100),
             user_custom_prompt=tool_parameters.get('custom_prompt', '')
         )
         print(f"系统提示词：\n{system_prompt}")
@@ -89,4 +90,3 @@ class RookieText2dataTool(Tool):
         # 兜底处理：返回原始文本中类似SQL的部分
         clean_text = re.sub(r'[\n\r\t]+', ' ', text).strip()
         return clean_text if any(kw in clean_text.upper() for kw in ['SELECT', 'FROM', 'WHERE']) else ""
-

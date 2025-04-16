@@ -1,0 +1,1 @@
+.\dify.exe plugin package ./txt2sql
